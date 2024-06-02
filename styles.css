@@ -2,3 +2,8 @@ body {
   background-color: rgb(92, 255, 250);
   color:red;
 }
+
+.SecretZone {
+  background-color:green;
+  color:black;
+}
