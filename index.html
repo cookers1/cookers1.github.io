@@ -10,7 +10,20 @@
   </head>
   <body>
     <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <p>I'm hosted with GitHub Pages. Look at my cool button!</p>
+    <body>
+      <button class="button" onclick="incrementCounter()">Click me!</button>
+      <div class="counter" id="counter">0</div>
+  
+      <script>
+          // JavaScript to handle the increment
+          let count = 0;
+  
+          function incrementCounter() {
+              count++;
+              document.getElementById('counter').innerText = count;
+          }
+      </script>
     
 
     <!-- START WELCOME SECTION -->
