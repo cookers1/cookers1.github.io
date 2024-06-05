@@ -21,3 +21,15 @@ body {
   font-size: 20px;
   margin-top: 20px;
 }
+
+.api-key-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  transition: filter 0.3s ease-in-out;
+  filter: blur(5px);
+}
+.api-key-input:hover,
+.api-key-input:focus {
+  filter: none;
+}
