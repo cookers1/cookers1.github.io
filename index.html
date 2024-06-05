@@ -12,6 +12,11 @@
     <h1>Hello World</h1>
     <p>I'm hosted with GitHub Pages. Look at my cool button!</p>
     <body>
+      <div class="form-container">
+        <label for="apiKey">Enter your API key:</label>
+        <input type="text" id="apiKey" class="api-key-input" placeholder="Enter API key here">
+        <button class="submit-button" onclick="submitApiKey()">Submit</button>
+      </div>
       <button class="button" onclick="incrementCounter()">Click me!</button>
       <div class="counter" id="counter">0</div>
   
@@ -23,6 +28,17 @@
               count++;
               document.getElementById('counter').innerText = count;
           }
+        // JavaScript to handle API key submission
+        function submitApiKey() {
+            const apiKey = document.getElementById('apiKey').value;
+            if (apiKey) {
+                console.log("API Key Submitted: " + apiKey);
+                alert("API Key Submitted: " + apiKey);
+                // Add your code here to handle the API key, such as saving it or using it to make requests
+            } else {
+                alert("Please enter an API key.");
+            }
+        }          
       </script>
     
 
