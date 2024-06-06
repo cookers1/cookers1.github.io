@@ -1,36 +1,36 @@
 window.onload = function() {
-    const savedApiKey1 = localStorage.getItem('apiKey');
+  const savedApiKey1 = localStorage.getItem('apiKey');
 }
 
-async function submitApiKey() {
+async function submitApiKey(role) {
   const apiKey = document.getElementById('apiKey').value;
-  if (!apiKey) {
-      alert("Please enter an API key.");
-      return;
-  }
-
+  if (!apiKey) {alert("Please enter an API key."); return;}
   const url = `https://api.torn.com/user/?selections=battlestats&key=${apiKey}&comment=TryItPage`;
 
   try {
       const response = await fetch(url);
       if (!response.ok) {
-          throw new Error(`Error: ${response.statusText}`);
+        throw new Error(`Error: ${response.statusText}`);
       }
       const data = await response.json();
       localStorage.setItem(`apiKey`, apiKey);
-      displayBattleStats(data);
+      displayBattleStats(data, role);
   } catch (error) {
       console.error("Error fetching battle stats:", error);
       alert("Error fetching battle stats. Please check your API key and try again.");
   }
 }
 
-function displayBattleStats(data) {
-  const statsContainer = document.getElementById('statsContainer');
+function displayBattleStats(data, role) {
+  let containerId;
+  if (role === 'attacker') {containerId = 'statsContainer';
+  } else if (role === 'defender') {containerId = 'p2Container';}  
+  const statsContainer = document.getElementById(containerId);
   if (data.error) {
-      statsContainer.innerText = `Error: ${data.error.error}`;
-      return;
+    console.error("Container not found:", containerId);
+    return;
   }
+
   const formattedStrength = data.strength.toLocaleString();
   const formattedSpeed = data.speed.toLocaleString();
   const formattedDefense = data.defense.toLocaleString();
@@ -44,7 +44,7 @@ function displayBattleStats(data) {
   + (data.defense * (1 + data.defense_modifier / 100)) + (data.speed * (1 + data.speed_modifier / 100)) 
   + (data.strength * (1 + data.strength_modifier / 100))).toLocaleString();
   const statsHtml = `
-      <p>Strength: ${formattedStrength}    ---    Effective Strength:${effectiveStrength} </p>
+      <p>Strength: ${formattedStrength}    ---    Effective Strength: ${effectiveStrength} </p>
       <p>Speed: ${formattedSpeed}    ---    Effective Speed: ${effectiveSpeed} </p>
       <p>Defense: ${formattedDefense}    ---    Effective Defense: ${effectiveDefense} </p>
       <p>Dexterity: ${formattedDexterity}    ---    Effective Dexterity: ${effectiveDexterity}</p>

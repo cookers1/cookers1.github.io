@@ -17,13 +17,15 @@
       <div class="form-container">
         <label for="apiKey">Enter your API key:</label>
         <input type="text" id="apiKey" class="api-key-input" placeholder="Enter API key here">
-        <button class="submit-button" onclick="submitApiKey()">Submit</button>
+        <button class="submit-button" onclick="submitApiKey('attacker')">Import as Attacker</button>
+        <button class="p2submit-button" onclick="submitApiKey('defender')">Import as Defender</button>
       </div>
-      <p>Attacker:</p>
+      <h3>Attacker:</h3>
       <div class="stats-container" id="statsContainer">
       </div>
 
-      <p>Defender:</p>
+      <h3>Defender:</h3>
+      <div class="p2-container" id="p2Container"></div>
 
     <!-- START WELCOME SECTION -->
 
