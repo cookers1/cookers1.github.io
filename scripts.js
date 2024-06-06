@@ -18,7 +18,6 @@ async function submitApiKey() {
       }
       const data = await response.json();
       localStorage.setItem(`apiKey`, apiKey);
-
       displayBattleStats(data);
   } catch (error) {
       console.error("Error fetching battle stats:", error);
