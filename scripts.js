@@ -1,3 +1,7 @@
+window.onload = function() {
+    const savedApiKey1 = localStorage.getItem('apiKey');
+}
+
 async function submitApiKey() {
   const apiKey = document.getElementById('apiKey').value;
   if (!apiKey) {
@@ -13,6 +17,8 @@ async function submitApiKey() {
           throw new Error(`Error: ${response.statusText}`);
       }
       const data = await response.json();
+      localStorage.setItem(`apiKey`, apiKey);
+
       displayBattleStats(data);
   } catch (error) {
       console.error("Error fetching battle stats:", error);
