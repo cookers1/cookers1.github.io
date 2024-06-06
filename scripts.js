@@ -44,11 +44,11 @@ function displayBattleStats(data) {
   + (data.defense * (1 + data.defense_modifier / 100)) + (data.speed * (1 + data.speed_modifier / 100)) 
   + (data.strength * (1 + data.strength_modifier / 100))).toLocaleString();
   const statsHtml = `
-      <p>Strength: ${formattedStrength}.    Effective Strength:${effectiveStrength} </p>
-      <p>Speed: ${formattedSpeed}.   Effective Speed: ${effectiveSpeed} </p>
-      <p>Defense: ${formattedDefense}.    Effective Defense: ${effectiveDefense} </p>
-      <p>Dexterity: ${formattedDexterity}.    Effective Dexterity: ${effectiveDexterity}</p>
-      <p>Total: ${formattedTotal}.    Effective Total: ${effectiveTotal} </p>
+      <p>Strength: ${formattedStrength}    ---    Effective Strength:${effectiveStrength} </p>
+      <p>Speed: ${formattedSpeed}    ---    Effective Speed: ${effectiveSpeed} </p>
+      <p>Defense: ${formattedDefense}    ---    Effective Defense: ${effectiveDefense} </p>
+      <p>Dexterity: ${formattedDexterity}    ---    Effective Dexterity: ${effectiveDexterity}</p>
+      <p>Total: ${formattedTotal}    ---    Effective Total: ${effectiveTotal} </p>
       <p>Modifiers:</p>
       <p>Strength modifier:${data.strength_modifier}%</p>
       <ul>${data.strength_info.map(info => `<li>${info}</li>`).join('')}</ul>
