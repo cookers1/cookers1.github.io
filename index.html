@@ -11,21 +11,89 @@
   </head>
   <body>
     <script src="scripts.js"></script>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages. Look at my cool button!</p>
+    <h1>Hopelessly Inaccurate Combat Simulator</h1>
     <body>
       <div class="form-container">
-        <label for="apiKey">Enter your API key:</label>
+        <label for="apiKey">Enter your API key (Full Access) (hover over blur), manually input your stats or select a preset character:</label>
+        <br>
+        <p>Please note that this overwrites any manually input stats. </p>
         <input type="text" id="apiKey" class="api-key-input" placeholder="Enter API key here">
         <button class="submit-button" onclick="submitApiKey('attacker')">Import as Attacker</button>
         <button class="p2submit-button" onclick="submitApiKey('defender')">Import as Defender</button>
+        <h3>Presets:</h3>
+        <!-- Todo: Dropdown containing my stats -->
+        <button class="presetAsubmit-button" onclick="submitApiKey('attacker')">Import Preset as Attacker</button>
+        <button class="presetDsubmit-button" onclick="submitApiKey('defender')">Import Preset as Defender</button>
       </div>
       <h3>Attacker:</h3>
+      <p>Manually Change Stats here:</p>
+      <!-- I wonder if it's possible to make enter also work here... -->
+      <input type="text" id="strinput" class="strinput" placeholder="Enter your Strength here">
+      <button class="submit-button" onclick="submitStr('attacker')">Enter Str</button>
+      <br>
+      <input type="text" id="spdinput" class="spdinput" placeholder="Enter your Speed here">
+      <button class="submit-button" onclick="submitSpd('attacker')">Enter Spd </button>
+      <br>
+      <input type="text" id="definput" class="definput" placeholder="Enter your Def here">
+      <button class="submit-button" onclick="submitDef('attacker')">Enter Def</button>
+      <br>
+      <input type="text" id="dexinput" class="dexinput" placeholder="Enter your Dex here">
+      <button class="submit-button" onclick="submitDex('attacker')">Enter Dex</button>
+      <br>
+      <input type="text" id="dexinput" class="lifeinput" placeholder="Enter your Life here">
+      <button class="submit-button" onclick="submitLife('attacker')">Enter Life</button>
+  
+      
+      <!-- 
+        Set combat stat modifiers?
+      -->
+
+      <!--Presets from a dropdown?
+      For Primary and Secondary: 
+      Input: Weapon Name, Weapon Damage, Weapon Accuracy, Passive 1 / 2 (dd) Clip Size, Ammo Use
+      Ammo type used...
+      If nothing input: 
+      No weapon equipped. 
+
+      Melee: 
+      Name, Damage, Accuracy, Passiev
+      
+      Temporary weapon. Temporary weapon passive. 
+
+      Button that removes weapon. 
+      Import from preset (Gold AK/DBK/ArmaLite)
+
+      Combat: Ammo Preservation Passives? Japanese Sword Damage? Tickboxes. 
+      Hamburger: Fist or kick? Reload or not? 
+      Sliders: 0-> 100 use pri/sec/mel
+      -->
+
+      <br>
+      <button class="primary-button" onclick="">Set Primary Weapon</button>
+      <br>
+      <button class="sec-button" onclick="">Set Secondary Weapon</button>
+      <br>
+      <button class="mel-button" onclick="">Set Melee Weapon</button>
+
+
+      <!-- Displays what the backend thinks?-->
       <div class="stats-container" id="statsContainer">
       </div>
 
       <h3>Defender:</h3>
+      <!-- Displays what the backend thinks for p2's stuff-->
       <div class="p2-container" id="p2Container"></div>
+
+      <!-- Popup. Mock torn interface. 
+      -->
+      <button class="fight" onclick="">Manually play a fight</button>
+
+      <!--
+      Throw error if er, both players priorities are not set. I wonder if I can import combat priorities from API? 
+      Slider to run x amount of fights.
+      Create popup with combat log. View each combat log? 
+      -->
+      <button class="fight" onclick="">Run X fights</button>
 
     <!-- START WELCOME SECTION -->
 
