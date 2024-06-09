@@ -44,7 +44,7 @@
       <br>
       <input type="text" id="dexinput" class="lifeinput" placeholder="Enter your Life here">
       <button class="submit-button" onclick="submitLife('attacker')">Enter Life</button>
-  
+      <br>
       
       <!-- 
         Set combat stat modifiers?
@@ -73,18 +73,44 @@
       Hamburger: Fist or kick? Reload or not? 
       Sliders: 0-> 100 use pri/sec/mel
       -->
-    <br>
+    <div class="primarywep">
 
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+      <div class="dropdown">
+        <button class="dropbtn">Preset Weapons</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
       </div>
-    </div>
-      <br>
+
+        <input type="text" id="strinput" class="wpndmginput" placeholder="Enter Weapon Damage">
+        <input type="text" id="strinput" class="wpnaccinput" placeholder="Enter Weapon Accuracy">
+
+      <div class="dropdown">
+        <button class="dropbtn">Weapon Passive 1</button>
+        <div class="dropdown-content">
+          <a href="#">Powerful</a>
+          <a href="#">Specialist</a>
+          <a href="#">Eviscerate</a>
+        </div>
+      </div>
+
+        <input type="text" id="strinput" class="wpnspecial1" placeholder="Enter Passive 1%">
+      
+      <div class="dropdown">
+        <button class="dropbtn">Weapon Passive 2</button>
+        <div class="dropdown-content">
+          <a href="#">Powerful</a>
+          <a href="#">Specialist</a>
+          <a href="#">Eviscerate</a>
+        </div>
+      </div>
+      
+        <input type="text" id="strinput" class="wpnspecial1" placeholder="Enter Passive 2%">
+
       <button class="primary-button" onclick="">Set Primary Weapon</button>
+    </div>
       <br>
       <button class="sec-button" onclick="">Set Secondary Weapon</button>
       <br>
