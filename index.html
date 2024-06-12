@@ -30,19 +30,21 @@
       <!-- I wonder if it's possible to make enter also work here...
       I wonder if I can fold this away to save some space if people only want to import with thingy...
         -->
-      <input type="text" id="strinput" class="strinput" placeholder="Enter your Strength here">
+      <input type="text" id="strinput" class="strinput" placeholder="Enter Strength here">
       <button class="submit-button" onclick="submitStr('attacker')">Enter Str</button>
+      <input type="text" id="strinput" class="strinput" placeholder="Enter Strength Modifier here">
+      <button class="submit-button" onclick="submitStr('attacker')">Enter Str Modifier</button>
       <br>
-      <input type="text" id="spdinput" class="spdinput" placeholder="Enter your Speed here">
+      <input type="text" id="spdinput" class="spdinput" placeholder="Enter Speed here">
       <button class="submit-button" onclick="submitSpd('attacker')">Enter Spd </button>
       <br>
-      <input type="text" id="definput" class="definput" placeholder="Enter your Def here">
+      <input type="text" id="definput" class="definput" placeholder="Enter Def here">
       <button class="submit-button" onclick="submitDef('attacker')">Enter Def</button>
       <br>
-      <input type="text" id="dexinput" class="dexinput" placeholder="Enter your Dex here">
+      <input type="text" id="dexinput" class="dexinput" placeholder="Enter Dex here">
       <button class="submit-button" onclick="submitDex('attacker')">Enter Dex</button>
       <br>
-      <input type="text" id="dexinput" class="lifeinput" placeholder="Enter your Life here">
+      <input type="text" id="dexinput" class="lifeinput" placeholder="Enter Life here">
       <button class="submit-button" onclick="submitLife('attacker')">Enter Life</button>
       <br>
       
@@ -108,6 +110,9 @@
       </div>
       
         <input type="text" id="strinput" class="wpnspecial1" placeholder="Enter Passive 2%">
+        <input type="text" id="strinput" class="ammomax" placeholder="Max Clip Size">
+        <input type="text" id="strinput" class="ammoUseMin" placeholder="Ammo Used Min">
+        <input type="text" id="strinput" class="ammoUseMax" placeholder="Ammo Used Max">
 
       <button class="primary-button" onclick="">Set Primary Weapon</button>
     </div>
@@ -115,6 +120,8 @@
       <button class="sec-button" onclick="">Set Secondary Weapon</button>
       <br>
       <button class="mel-button" onclick="">Set Melee Weapon</button>
+
+      <!--Slider for combat options...-->
 
 
       <!-- Displays what the backend thinks?-->
@@ -124,7 +131,7 @@
       <h3>Defender:</h3>
       <!-- Displays what the backend thinks for p2's stuff-->
       <div class="p2-container" id="p2Container"></div>
-
+      <h3>Fight Options:</h3>
       <!-- Popup. Mock torn interface. 
       -->
       <button class="fight" onclick="">Manually play a fight</button>
